@@ -1,4 +1,8 @@
+import { Http2ServerRequest } from "http2";
 import React, { useEffect, useState } from "react";
+import { NavLink, Route, Routes, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import Faculties from "./components/Faculties";
+import Subjects from "./components/Subjects";
 
 const inferencnaSiet = {
   question: "Pre aký ročník vyberáš predmet?",
@@ -139,40 +143,43 @@ const inferencnaSiet = {
 };
 
 function App() {
-  const [question, setQuestion] = useState(inferencnaSiet.question);
-  const [items, setItems] = useState<any>(inferencnaSiet.items);
-  const [result, setResult] = useState(null);
+  let navigate = useNavigate();
+  let location = useLocation();
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    console.log(location)
+  }, [location])
+  
 
   return (
     <div className="app">
-      <header>Výber voliteľných predmetov TUKE</header>
+      <header>
+        <div
+          className="logo"
+          onClick={(e) => {
+            navigate("/predmety");
+            if(searchParams.has('items')){
+              let newSearch = searchParams;
+              newSearch.delete('items')
+              setSearchParams(newSearch)
+            }
+          }}
+        >
+          Výber voliteľných predmetov TUKE
+        </div>
+        <nav>
+          <a className={location.pathname === "/fakulty" ? 'active' : ''} onClick={() => navigate("/fakulty")}>Fakulty</a>
+          <a className={location.pathname === "/predmety" || location.pathname === "/"? 'active' : ''} onClick={() => navigate("/predmety")}>Predmety</a>
+          <a>Štúdium</a>
+        </nav>
+      </header>
       <main>
-        {result ? (
-          <h1>{result}</h1>
-        ) : (
-          <>
-            <h1>{question}</h1>
-            <div className="buttons">
-              {items?.length &&
-                items?.map((item: any) => {
-                  return (
-                    <button
-                      onClick={(e) => {
-                        if (item.result) {
-                          setResult(item.result);
-                          return;
-                        }
-                        setQuestion(item.question);
-                        setItems(item.items);
-                      }}
-                    >
-                      {item.value}
-                    </button>
-                  );
-                })}
-            </div>
-          </>
-        )}
+        <Routes>
+          <Route path="/" element={<Subjects inferencnaSiet={inferencnaSiet} />} />
+          <Route path="/predmety" element={<Subjects inferencnaSiet={inferencnaSiet} />} />
+          <Route path="/fakulty" element={<Faculties />} />
+        </Routes>
       </main>
     </div>
   );

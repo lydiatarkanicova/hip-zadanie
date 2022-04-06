@@ -21,16 +21,41 @@ body,
   padding: 1rem;
   background-color: #f5e6be;
   header {
-    color: #f69031;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    font-size: 32px;
+    .logo {
+      color: #f69031;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      max-width: 330px;
+      cursor: pointer;
+      user-select: none;
+    }
+    nav {
+      color: #9e9c9b;
+      font-weight: 600;
+      font-size: 22px;
+      a {
+        margin: 0 16px;
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          background: #f69031;
+          color: white;
+        }
+      }
+    }
   }
   main {
     width: 100%;
     max-width: 710px;
     margin: 0 auto;
-    
+
     h1 {
       color: #9e9c9b;
       font-size: 24px;
@@ -40,11 +65,32 @@ body,
       border-radius: 7px;
       box-shadow: 0px 4px 14px 0px #e5e5e5;
     }
+    h2 {
+      font-size: 32px;
+      margin-top: 40px;
+      color: #a1a1a1;
+    }
+    h3 {
+      color: #7c5f45;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    h4 {
+      color: #a9590f;
+      font-size: 20px;
+      margin-top: 5px;
+    }
+    h5 {
+      font-size: 38px;
+      color: #f27a0b;
+      margin-top: 5px;
+    }
     .buttons {
       display: flex;
       flex-direction: column;
       background-color: white;
       padding: 14px;
+      margin-bottom: 32px;
       border-radius: 7px;
       box-shadow: 0px 4px 25px 0px #ff9d56;
       button {
@@ -57,10 +103,21 @@ body,
         transition: background-color 0.2s ease-in-out;
         cursor: pointer;
         text-align: left;
-        &:hover{
-          background: #FCE097;
+        &:hover {
+          background: #fce097;
         }
       }
+    }
+    button {
+      background: #f79031;
+      border: none;
+      font-size: 15px;
+      color: white;
+      border-radius: 4px;
+      padding: 8px 20px;
+      margin: 2px;
+      transition: background-color 0.2s ease-in-out;
+      cursor: pointer;
     }
   }
 }
