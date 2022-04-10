@@ -9,6 +9,7 @@ const Subjects: React.FC<ISubjects> = ({ ...props }) => {
   const [question, setQuestion] = useState(props.inferencnaSiet.question);
   const [items, setItems] = useState<any>(props.inferencnaSiet.items);
   const [result, setResult] = useState(null);
+  const [link, setLink] = useState(null);
 
   let [searchParams, setSearchParams] = useSearchParams();
 
@@ -18,11 +19,14 @@ const Subjects: React.FC<ISubjects> = ({ ...props }) => {
       let currentObj = props.inferencnaSiet;
       selected?.forEach((item) => {
         let newResult = null;
+        let newLink = null;
         currentObj = currentObj.items?.find((sietItem: any) => sietItem.value === item);
         if (currentObj.result) {
           newResult = currentObj.result;
+          newLink = currentObj.link;
         }
         setResult(newResult);
+        setLink(newLink);
         setQuestion(currentObj?.question);
         setItems(currentObj?.items);
       });
@@ -41,6 +45,7 @@ const Subjects: React.FC<ISubjects> = ({ ...props }) => {
         <>
           {result !== "Pre Vami zvolené kritéria neexistuje predmet" ? <h2>Predmet, ktorý by si si mal zvoliť:</h2> : null}
           <h5>{result}</h5>
+          <a href={link ? `${window.location.origin}/assets/${link}` : window.location.origin}>Informačný list predmetu</a>
         </>
       ) : (
         <>
