@@ -48,6 +48,8 @@ const Feedback = () => {
 	return (
 		<>
 			<h3>Spätná väzba</h3>
+			<h4>Budeme radi za tvojú spätnú väzbu k akémukoľvek predmetu. Pomôžeš tak iným študentom pri správnom výbrere</h4>
+			<h6>Vaše odpovede pribežne spracovávame a pridávame nové otázky k predmetom</h6>
 			{!sent ? (
 				<form onSubmit={addFeedback}>
 					<label>
@@ -66,7 +68,7 @@ const Feedback = () => {
 						<input type='text' value={feedback.subject} name='subject' placeholder='Predmet' onChange={updateInput} required />
 					</label>
 					<label>
-						<span>Otázka</span>
+						<span>Ako by mala znieť otázka</span>
 						<textarea
 							value={feedback.question}
 							name='question'
@@ -76,7 +78,7 @@ const Feedback = () => {
 							required></textarea>
 					</label>
 					<label>
-						<span>Odpoveď</span>
+						<span>Aká je tvoja odpoveď </span>
 						<textarea
 							value={feedback.answer}
 							name='answer'

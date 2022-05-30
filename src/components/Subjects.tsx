@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export interface ISubjects {
   inferencnaSiet: any;
@@ -10,6 +10,7 @@ const Subjects: React.FC<ISubjects> = ({ ...props }) => {
   const [items, setItems] = useState<any>(props.inferencnaSiet.items);
   const [result, setResult] = useState(null);
   const [link, setLink] = useState(null);
+  let navigate = useNavigate();
 
   let [searchParams, setSearchParams] = useSearchParams();
 
@@ -45,7 +46,13 @@ const Subjects: React.FC<ISubjects> = ({ ...props }) => {
         <>
           {result !== "Pre Vami zvolené kritéria neexistuje predmet" ? <h2>Predmet, ktorý by si si mal zvoliť:</h2> : null}
           <h5>{result}</h5>
-          <a href={link ? `${window.location.origin}/assets/${link}` : window.location.origin}>Informačný list predmetu</a>
+          {link && (
+            <a href={link ? `${window.location.origin}/assets/${link}` : window.location.origin} style={{display:"block", marginBottom: "1rem" }}>
+              Informačný list predmetu
+            </a>
+          )}
+          <br />
+          <button onClick={() => navigate("/feedback")}>Pomôž iným študentom pri výbere predmetu</button>
         </>
       ) : (
         <>

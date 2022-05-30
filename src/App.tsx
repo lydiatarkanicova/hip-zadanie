@@ -18,26 +18,78 @@ const inferencnaSiet = {
 					items: [
 						{
 							value: 'Áno',
-							question: 'Chceš si zlepšiť zručnosti z angličtiny?',
+							question: 'Potrebuješ k štúdiu ovládať dobre fyziku?',
 							items: [
 								{
 									value: 'Áno',
-									result: 'Angličtina',
-									link: 'anglictina.pdf',
-								},
-								{
-									value: 'Nie',
-									question: 'Chceš si zlepšiť zručnosti z fyziky?',
+									question: 'Chceš si prejsť základy fyziky?',
 									items: [
 										{
 											value: 'Áno',
-											result: 'Úvod do fyziky',
-											link: 'uvod-do-fyziky.pdf',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Úvod do fyziky a Anglický jazyk',
+												},
+												{
+													value: 'Nie',
+													result: 'Úvod do fyziky',
+													link: 'uvod-do-fyziky.pdf',
+												},
+											],
 										},
 										{
 											value: 'Nie',
-											result: 'Pre Vami zvolené kritéria neexistuje predmet',
-											link: '',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Anglický jazyk',
+													link: 'anglictina.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Úvod do fyziky',
+													link: 'uvod-do-fyziky.pdf',
+												},
+											],
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Chceš si prejsť základy fyziky?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Úvod do fyziky a Anglický jazyk',
+												},
+												{
+													value: 'Nie',
+													result: 'Úvod do fyziky',
+													link: 'uvod-do-fyziky.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Anglický jazyk',
+													link: 'anglictina.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Pre Vami zvolené kritéria neexistuje predmet',
+												},
+											],
 										},
 									],
 								},
@@ -45,7 +97,81 @@ const inferencnaSiet = {
 						},
 						{
 							value: 'Nie',
-							result: 'Pre Vami zvolené kritéria neexistuje predmet',
+							question: 'Potrebuješ k štúdiu ovládať dobre fyziku?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Chceš si prejsť základy fyziky?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Úvod do fyziky a Anglický jazyk',
+												},
+												{
+													value: 'Nie',
+													result: 'Úvod do fyziky',
+													link: 'uvod-do-fyziky.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Anglický jazyk',
+													link: 'anglictina.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Pre Vami zvolené kritéria neexistuje predmet',
+												},
+											],
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Chceš si prejsť základy fyziky?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Úvod do fyziky a Anglický jazyk',
+												},
+												{
+													value: 'Nie',
+													result: 'Úvod do fyziky',
+													link: 'uvod-do-fyziky.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie',
+											question: 'Chceš 6 kreditov navyše, ale za nezáživné hodiny angličtiny?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Anglický jazyk',
+													link: 'anglictina.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Pre Vami zvolené kritéria neexistuje predmet',
+												},
+											],
+										},
+									],
+								},
+							],
 						},
 					],
 				},
@@ -61,29 +187,187 @@ const inferencnaSiet = {
 			items: [
 				{
 					value: 'Zimný semester',
-					question: 'Chceš..',
+					question: 'Robí ti problém matematika?',
 					items: [
 						{
-							value: 'ekonomický predmet ľahši na zvládnutie',
-							result: 'Podniková ekonomika',
+							value: 'Nie',
+							question: 'Zvládaš dobre aj dlhšie prednášky a cvičenia?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Robí ti problém mať školu v piatok?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Diskrétna matematika',
+											link: 'diskretna-matematika.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Diskrétna matematika',
+											link: 'diskretna-matematika.pdf',
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Robí ti problém mať školu v piatok?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Chceš sa na voliteľnom predmete venovať matematike?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Diskrétna matematika',
+													link: 'diskretna-matematika.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Podniková ekonomika',
+													link: 'podnikova-ekonomika.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie',
+											result: 'Diskrétna matematika',
+											link: 'diskretna-matematika.pdf',
+										},
+									],
+								},
+							],
 						},
 						{
-							value: 'matematicky zameraný a náročnejší predmet',
-							result: 'Diskrétna matematika',
+							value: 'Áno',
+							question: 'Zvládaš dobre aj dlhšie prednášky a cvičenia?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Robí ti problém mať školu v piatok?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Podniková ekonomika',
+											link: 'podnikova-ekonomika.pdf',
+										},
+										{
+											value: 'Nie',
+											question: 'Chceš sa na voliteľnom predmete venovať matematike?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Diskrétna matematika',
+													link: 'diskretna-matematika.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Podniková ekonomika',
+													link: 'podnikova-ekonomika.pdf',
+												},
+											],
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Robí ti problém mať školu v piatok?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Podniková ekonomika',
+											link: 'podnikova-ekonomika.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Podniková ekonomika',
+											link: 'podnikova-ekonomika.pdf',
+										},
+									],
+								},
+							],
 						},
 					],
 				},
 				{
 					value: 'Letný semester',
-					question: 'Chceš..',
+					question: 'Chceš na voliteľnom predmete programovať?',
 					items: [
 						{
-							value: 'skupinovú prácu so širokým záberom programovateľných zadaní',
-							result: 'Základy cloudových technológií',
+							value: 'Áno',
+							question: 'Vyhovuje ti skupinová práca na zadaniach?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Vadia ti nudné prednášky alebo cvičenia?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Základy cloudových technológií',
+											link: 'zaklady-cloudovych-technologii.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Základy cloudových technológií',
+											link: 'zaklady-cloudovych-technologii.pdf',
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Vadia ti nudné prednášky alebo cvičenia?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Základy cloudových technológií',
+											link: 'zaklady-cloudovych-technologii.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Rozvrhovanie a logistika',
+											link: 'rozvrhovanie-a-logistika.pdf',
+										},
+									],
+								},
+							],
 						},
 						{
-							value: 'manažérske rozvrhovanie procesov v podniku',
-							result: 'Rozvrhovanie a logistika',
+							value: 'Nie',
+							question: 'Vyhovuje ti skupinová práca na zadaniach?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Vadia ti nudné prednášky alebo cvičenia?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Základy cloudových technológií',
+											link: 'zaklady-cloudovych-technologii.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Rozvrhovanie a logistika',
+											link: 'rozvrhovanie-a-logistika.pdf',
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Vadia ti nudné prednášky alebo cvičenia?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Rozvrhovanie a logistika',
+											link: 'rozvrhovanie-a-logistika.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Rozvrhovanie a logistika',
+											link: 'rozvrhovanie-a-logistika.pdf',
+										},
+									],
+								},
+							],
 						},
 					],
 				},
@@ -95,27 +379,52 @@ const inferencnaSiet = {
 			items: [
 				{
 					value: 'Zimný semester',
-					question: 'Chceš programovať?',
+					question: 'Chceš na voliteľnom predmete programovať?',
 					items: [
 						{
 							value: 'Áno',
-							question: 'Rád sa zúčastníš na ekonomickom predmete?',
+							question: 'Chceš predmet ukončiť iba klasifikovaným zápočtom?',
 							items: [
 								{
 									value: 'Áno',
-									result: 'Oceňovanie investičných zámerov',
-								},
-								{
-									value: 'Nie',
-									question: 'Chceš..',
+									question: 'Prekáža ti práca na semestrálnych projektoch?',
 									items: [
 										{
-											value: 'nenáročný predmet ale so skúškou ',
+											value: 'Áno',
 											result: 'Znalostné systémy',
+											link: 'znalostne-systemy.pdf',
 										},
 										{
-											value: 'náročnejší predmet ale ukončenie cez klasifikovaný zápočet',
+											value: 'Nie',
 											result: 'Vývoj mobilných inteligentných riešení',
+											link: 'vyvoj-mobilnych-inteligentnych-rieseni.pdf',
+										},
+									],
+								},
+								{
+									value: 'Nie, môže byť aj skúška',
+									question: 'Prekáža ti práca na semestrálnych projektoch?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Znalostné systémy',
+											link: 'znalostne-systemy.pdf',
+										},
+										{
+											value: 'Nie',
+											question: 'Chceš čo najmenej hodín vyučovania?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Vývoj mobilných inteligentných riešení',
+													link: 'vyvoj-mobilnych-inteligentnych-rieseni.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Znalostné systémy',
+													link: 'znalostne-systemy.pdf',
+												},
+											],
 										},
 									],
 								},
@@ -123,21 +432,233 @@ const inferencnaSiet = {
 						},
 						{
 							value: 'Nie',
-							result: 'Optimalizácia v ekonomických procesoch',
+							question: 'Chceš predmet ukončiť iba klasifikovaným zápočtom?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Prekáža ti práca na semestrálnych projektoch?',
+									items: [
+										{
+											value: 'Áno',
+											result: 'Oceňovanie investičných zámerov',
+											link: 'ocenovanie-investicnych-zamerov.pdf',
+										},
+										{
+											value: 'Nie',
+											result: 'Znalostné systémy',
+											link: 'znalostne-systemy.pdf',
+										},
+									],
+								},
+								{
+									value: 'Nie, môže byť aj skúška',
+									question: 'Prekáža ti práca na semestrálnych projektoch?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Zvládaš nudné prednášky a nevadia ti?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Optimalizácia v ekonomických procesoch',
+													link: 'optimalizacia-v-ekonomickych-procesoch.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Oceňovanie investičných zámerov',
+													link: 'ocenovanie-investicnych-zamerov.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie',
+											question: 'Zvládaš nudné prednášky a nevadia ti?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Optimalizácia v ekonomických procesoch',
+													link: 'optimalizacia-v-ekonomickych-procesoch.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Znalostné systémy',
+													link: 'znalostne-systemy.pdf',
+												},
+											],
+										},
+									],
+								},
+							],
 						},
 					],
 				},
 				{
 					value: 'Letný semester',
-					question: 'Máš záujem..',
+					question: 'Chceš predmet ukončiť iba klasifikovaným zápočtom?',
 					items: [
 						{
-							value: 'naučiť sa účtovať pomocou softvéru',
-							result: 'Účtovníctvo v informačných procesoch',
+							value: 'Áno',
+							question: 'Chceš pracovať na skupinovom projekte?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Chceš mať čo najmenej prednášok?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie, nerobia mi problém',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+											],
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Chceš mať čo najmenej prednášok?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie, nerobia mi problém',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+											],
+										},
+									],
+								},
+							],
 						},
 						{
-							value: 'o hodnotné poznatky z praxe a zároveň o prácu na skupinovom projekte',
-							result: 'Hospodárska informatika v praxi',
+							value: 'Nie, môže byť aj skúška',
+							question: 'Chceš pracovať na skupinovom projekte?',
+							items: [
+								{
+									value: 'Áno',
+									question: 'Chceš mať čo najmenej prednášok?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie, nerobia mi problém',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+											],
+										},
+									],
+								},
+								{
+									value: 'Nie',
+									question: 'Chceš mať čo najmenej prednášok?',
+									items: [
+										{
+											value: 'Áno',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+											],
+										},
+										{
+											value: 'Nie, nerobia mi problém',
+											question: 'Máš záujem dozvedieť sa niečo z praxe?',
+											items: [
+												{
+													value: 'Áno',
+													result: 'Hospodárska informatika v praxi',
+													link: 'hospodarska-informatika-v-praxi.pdf',
+												},
+												{
+													value: 'Nie',
+													result: 'Účtovníctvo v informačných systémoch',
+													link: 'uctovnictvo-v-informacnych-systemoch.pdf',
+												},
+											],
+										},
+									],
+								},
+							],
 						},
 					],
 				},
